@@ -1,0 +1,256 @@
+/* ============================================
+   Transverse AI/Consulting — shared stylesheet
+   One CSS file, linked from all 5 HTML pages.
+   That's the plain-HTML tradeoff: no shared
+   "layout" file like a framework would give you,
+   so nav/footer HTML is repeated in every page,
+   but the LOOK (color, type, spacing) lives here
+   once and applies everywhere.
+   ============================================ */
+
+/* --- Design tokens ---------------------------
+   CSS "custom properties" (the --name: value
+   pairs below) are just named variables. Change
+   a color once here and it updates on every page
+   that uses var(--accent) etc. */
+:root {
+  --cream: #faf6ef;
+  --cream-dark: #f0e9db;
+  --ink: #33302a;
+  --ink-soft: #5c574d;
+  --accent: #c2603f;       /* terracotta */
+  --accent-dark: #a34f32;
+  --card-bg: #ffffff;
+  --border: #e7ddc9;
+  --radius: 16px;
+  --shadow: 0 4px 16px rgba(51, 48, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Nunito Sans', -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Quicksand', 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+a {
+  color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* --- Layout shell ----------------------------- */
+.page-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Nav --------------------------------------- */
+header.site-header {
+  background: var(--cream-dark);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.brand {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+nav.site-nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+nav.site-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+nav.site-nav a:hover,
+nav.site-nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+/* --- Hero -------------------------------------- */
+.hero {
+  padding: 64px 0 40px;
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  max-width: 620px;
+}
+
+.hero p.lead {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 560px;
+}
+
+/* --- Buttons ------------------------------------ */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 13px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.98rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+/* --- Cards --------------------------------------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.card p {
+  color: var(--ink-soft);
+  margin-bottom: 0;
+}
+
+/* --- Steps (process list) ------------------------- */
+.steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 32px 0;
+  display: grid;
+  gap: 18px;
+}
+
+.steps li {
+  counter-increment: step;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.steps li::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Section spacing ------------------------------- */
+section {
+  padding: 20px 0 44px;
+}
+
+/* --- Forms ------------------------------------------ */
+form.contact-form {
+  display: grid;
+  gap: 16px;
+  max-width: 520px;
+}
+
+label {
+  font-weight: 700;
+  font-size: 0.92rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #fff;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* --- Footer ------------------------------------------ */
+footer.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  padding: 28px 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+/* --- Small screens ------------------------------------ */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
