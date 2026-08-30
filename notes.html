@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transverse AI/Consulting — Community Notes</title>
+<meta name="description" content="Leave a note or question — an open community wall.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">Transverse AI/Consulting</a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="notes.html" aria-current="page">Notes</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <section class="hero">
+    <h1>Community Notes</h1>
+    <p class="lead">A public wall — leave a question, a thought, or just say hi. Anyone can post here. Posting requires a free GitHub account (that's what makes this possible without running a server).</p>
+  </section>
+
+  <section>
+    <!--
+      GISCUS WIDGET — turns this page into a comment/guestbook wall,
+      powered by GitHub Discussions on your repo. Not live yet.
+
+      To activate (see website-build-plan.md for full steps):
+        1. Turn on "Discussions" in your GitHub repo's settings.
+        2. Go to giscus.app, sign in, select your repo.
+        3. Mapping: "Specific term" -> community-notes
+           (this makes the whole page share ONE thread, like a wall,
+           instead of a separate thread per visit)
+        4. giscus.app gives you real data-repo / data-repo-id /
+           data-category / data-category-id values below.
+        5. Install the giscus GitHub app on the repo when prompted.
+    -->
+    <script src="https://giscus.app/client.js"
+        data-repo="YOUR-GITHUB-USERNAME/transverse-website"
+        data-repo-id="REPLACE_WITH_REPO_ID"
+        data-category="General"
+        data-category-id="REPLACE_WITH_CATEGORY_ID"
+        data-mapping="specific"
+        data-term="community-notes"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    <!-- Fallback shown until the script above has real repo values -->
+    <div class="card" style="margin-top:20px;">
+      <p style="margin:0;">The notes wall isn't switched on yet — it needs a real GitHub repo connected first (see the hosting setup steps). Once that's done, this box is replaced automatically by the live comment thread.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page-wrap">
+    &copy; 2026 Transverse AI/Consulting. Built by hand, one page at a time.
+  </div>
+</footer>
+
+</body>
+</html>

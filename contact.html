@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transverse AI/Consulting — Contact</title>
+<meta name="description" content="Get in touch about AI consulting for your trades or construction business.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">Transverse AI/Consulting</a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="notes.html">Notes</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <section class="hero">
+    <h1>Get in touch</h1>
+    <p class="lead">Tell me a bit about your business and what's slowing you down. I'll get back to you within a day or two.</p>
+  </section>
+
+  <section>
+    <!--
+      FORM SUBMISSION — this is the one part of a static site that
+      needs outside help, since plain HTML has no way to "send" data
+      anywhere on its own.
+
+      Chosen path: GitHub Pages + Formspree.
+        1. Create a free account at formspree.io
+        2. Create a new form there — it gives you an endpoint URL like
+           https://formspree.io/f/xxxxabcd
+        3. Replace the action="REPLACE_WITH_FORMSPREE_ENDPOINT" below
+           with that URL.
+
+      Alternative path: if hosting on Netlify instead of GitHub Pages,
+      delete the action= attribute entirely and keep the
+      data-netlify="true" attribute below — Netlify auto-detects and
+      handles the form for you, no third-party account needed.
+    -->
+    <form class="contact-form"
+          action="REPLACE_WITH_FORMSPREE_ENDPOINT"
+          method="POST"
+          data-netlify="true"
+          name="contact">
+      <input type="hidden" name="form-name" value="contact">
+
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div>
+        <label for="business">Business name (optional)</label>
+        <input type="text" id="business" name="business">
+      </div>
+
+      <div>
+        <label for="message">What's going on / what are you hoping AI could help with?</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <button type="submit" class="btn">Send message</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Other ways to reach me</h2>
+    <!-- PLACEHOLDER — swap in your real contact info -->
+    <p>
+      Email: <a href="mailto:REPLACE@example.com">REPLACE@example.com</a><br>
+      Phone: <a href="tel:+10000000000">(000) 000-0000</a>
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page-wrap">
+    &copy; 2026 Transverse AI/Consulting. Built by hand, one page at a time.
+  </div>
+</footer>
+
+</body>
+</html>
